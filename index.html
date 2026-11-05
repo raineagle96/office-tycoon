@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Office Tycoon</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <div class="brand">Office Tycoon</div>
+      <div class="stat"><span class="label">Ngày</span><b id="day">1</b></div>
+      <div class="stat"><span class="label">Giờ</span><b id="clock">08:00</b></div>
+      <div class="stat money"><span class="label">Tiền</span><b id="money">0</b></div>
+      <div class="speed" id="speed">
+        <button data-speed="0" title="Tạm dừng (Space)">❚❚</button>
+        <button data-speed="1" title="Tốc độ x1 (phím 1)">x1</button>
+        <button data-speed="2" title="Tốc độ x2 (phím 2)">x2</button>
+        <button data-speed="3" title="Tốc độ x3 (phím 3)">x3</button>
+      </div>
+      <button id="mute" class="icon" title="Bật/tắt âm thanh (M)">🔊</button>
+      <button id="toMenu" class="icon" title="Về menu">☰</button>
+    </header>
+
+    <main id="stage">
+      <div id="canvasWrap">
+        <canvas id="game" width="800" height="600"></canvas>
+        <div id="pausedTag" hidden>TẠM DỪNG</div>
+        <div id="hint"></div>
+      </div>
+      <aside id="side">
+        <section>
+          <h3>Dự án đang làm</h3>
+          <div id="projects"></div>
+        </section>
+        <section>
+          <h3>Dự án được mời</h3>
+          <div id="offers"></div>
+        </section>
+        <section id="infoSection">
+          <h3>Nhân viên đang chọn</h3>
+          <div id="info"></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer id="toolbar">
+      <div class="group" id="build"></div>
+      <div class="group">
+        <button data-panel="hire">Tuyển dụng</button>
+        <button data-panel="staff">Nhân sự</button>
+        <button data-panel="help">Hướng dẫn</button>
+      </div>
+    </footer>
+
+    <div id="toasts"></div>
+    <div id="modal" hidden><div class="card" id="modalCard"></div></div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
